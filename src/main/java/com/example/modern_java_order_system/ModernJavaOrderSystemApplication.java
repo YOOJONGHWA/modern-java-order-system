@@ -22,7 +22,7 @@ public class ModernJavaOrderSystemApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) {
 		Order order = new Order(1, "Pen", 1000, 4);
-		String result = orderService.order();
-		System.out.println("주문 결과: " + result);
+		String result = orderService.order(order);
+		System.out.println("result: " + result);
 	}
 }

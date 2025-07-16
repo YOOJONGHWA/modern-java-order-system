@@ -15,8 +15,7 @@ public class OrderService {
         this.repository = repository;
     }
 
-    public String order() {
-        Order order = new Order(1, "Pen", 1000, 4);
+    public String order(Order order) {
         return repository.order(order);
     }
 }
