@@ -10,9 +10,15 @@ import java.util.List;
 public class OrderRepository {
 
     public final List<Order> orders = new ArrayList<>();
+    public int id = 1;
 
-    public String order(Order order) {
+    public String createOrder(Order order) {
+        order.setId(id++);
         orders.add(order);
         return "ok";
+    }
+
+    public List<Order> showInfo() {
+        return orders;
     }
 }

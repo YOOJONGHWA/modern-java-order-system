@@ -1,23 +1,23 @@
 package com.example.modern_java_order_system.domain;
 
-import lombok.Data;
+import com.example.modern_java_order_system.status.OrderStatus;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Getter
+@Setter
+@Builder
 public class Order {
 
     private int id;
-
-    private String productName;
-
-    private int price;
-
-    private int amount;
-
-    public Order(int id, String productName, int price, int amount) {
-        this.id = id;
-        this.productName = productName;
-        this.price = price;
-        this.amount = amount;
-    }
+    private List<OrderItem> items;
+    private OrderStatus status;
+    private LocalDateTime orderDate;
+    private String customerName;
+    private int totalPrice;
 
 }

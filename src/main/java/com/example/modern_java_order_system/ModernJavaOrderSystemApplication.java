@@ -1,6 +1,5 @@
 package com.example.modern_java_order_system;
 
-import com.example.modern_java_order_system.domain.Order;
 import com.example.modern_java_order_system.service.OrderService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,8 +20,10 @@ public class ModernJavaOrderSystemApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) {
-		Order order = new Order(1, "Pen", 1000, 4);
-		String result = orderService.order(order);
+
+		String result = orderService.createOrder();
 		System.out.println("result: " + result);
+
+		orderService.printAllOrders();
 	}
 }
